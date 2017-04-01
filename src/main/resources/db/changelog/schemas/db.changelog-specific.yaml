@@ -1,0 +1,16 @@
+databaseChangeLog:
+
+  - changeSet:
+      author: rsantana
+      id: 1
+      changes:
+      - createTable:
+          tableName: specific_table
+          columns:
+          - column:
+              name: id
+              type: BIGINT
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: pk_specific_table

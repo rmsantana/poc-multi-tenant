@@ -1,0 +1,33 @@
+databaseChangeLog:
+
+  - changeSet:
+      author: rsantana
+      id: 1
+      changes:
+      - createTable:
+          tableName: user_schemas
+          columns:
+          - column:
+              name: schema_name
+              type: VARCHAR(255)
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: pk_user_schema
+
+  - changeSet:
+      author: rsantana
+      id: 2
+      changes:
+      - insert:
+          tableName: user_schemas
+          columns:
+          - column: 
+              name: schema_name
+              value: user1
+      - insert:
+          tableName: user_schemas
+          columns:
+          - column:
+              name: schema_name
+              value: user2

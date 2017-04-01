@@ -5,7 +5,7 @@ databaseChangeLog:
       id: 1
       changes:
       - createTable:
-          tableName: user_schemas
+          tableName: user_schema
           columns:
           - column:
               name: schema_name
@@ -20,14 +20,24 @@ databaseChangeLog:
       id: 2
       changes:
       - insert:
-          tableName: user_schemas
+          tableName: user_schema
           columns:
           - column: 
               name: schema_name
               value: user1
       - insert:
-          tableName: user_schemas
+          tableName: user_schema
           columns:
           - column:
               name: schema_name
               value: user2
+   
+  - changeSet:
+      id: 3
+      author: rsantana
+      changes:
+      - createView:
+          replaceIfExists: true
+          selectQuery: select schema_name from user_schemas
+          viewName: schema_view
+          

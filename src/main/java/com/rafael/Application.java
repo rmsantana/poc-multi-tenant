@@ -32,7 +32,7 @@ public class Application {
 		stmt = dataSource.getConnection().createStatement();
 
 		ResultSet rs = stmt
-				.executeQuery("SELECT us.schema_name FROM user_schemas us");
+				.executeQuery("SELECT sv.schema_name FROM schema_view sv");
 		List<String> schemas = new ArrayList<>();
 		while (rs.next()) {
 			String schemaName = rs.getString("schema_name");

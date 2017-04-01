@@ -20,6 +20,6 @@ public class UserSchemaService {
 		UserSchema userSchema = new UserSchema();
 		userSchema.setSchemaName(schemaName);
 		userSchemaRepository.save(userSchema);
-		liquibaseService.run();
+		liquibaseService.run(schemaName);
 	}
 }

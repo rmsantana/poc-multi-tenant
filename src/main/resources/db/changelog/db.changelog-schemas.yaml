@@ -38,6 +38,6 @@ databaseChangeLog:
       changes:
       - createView:
           replaceIfExists: true
-          selectQuery: select schema_name from user_schemas
+          selectQuery: select schema_name from user_schema
           viewName: schema_view
           
